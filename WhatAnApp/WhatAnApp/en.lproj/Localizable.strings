@@ -1,0 +1,16 @@
+//
+//  Localizable.strings
+//  WhatAnApp
+//
+//  Created by Cassie on 2024/10/16.
+//
+
+"Avatar" = "头像";
+"Messages" = "信息";
+"Help" = "帮助";
+"Logout" = "登出";
+"Cancel" = "取消";
+"Ok" = "确定";
+"Search" = "搜索";
+
+"Error, please try again later" = "出错了，请稍后再试";

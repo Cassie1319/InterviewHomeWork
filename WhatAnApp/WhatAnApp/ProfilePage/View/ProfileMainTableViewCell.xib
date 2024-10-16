@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="ProfileMainTableViewCell" customModule="WhatAnApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="D7I-dZ-OOy">
+                        <rect key="frame" x="20" y="21.5" width="60" height="57"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="60" id="Cm9-VI-0aR"/>
+                            <constraint firstAttribute="width" constant="60" id="u29-wt-Hv2"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="30"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="XXX" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="55D-Co-h25">
+                        <rect key="frame" x="100" y="25" width="294" height="24"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="123@qq.com" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EPS-af-fom">
+                        <rect key="frame" x="100" y="54" width="294" height="20"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" red="0.57647460699999997" green="0.57646352050000005" blue="0.57647103070000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="EPS-af-fom" firstAttribute="trailing" secondItem="55D-Co-h25" secondAttribute="trailing" id="7r1-cu-nfj"/>
+                    <constraint firstAttribute="trailing" secondItem="55D-Co-h25" secondAttribute="trailing" constant="20" id="bPV-64-WrO"/>
+                    <constraint firstItem="D7I-dZ-OOy" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="cVN-7Q-2qt"/>
+                    <constraint firstItem="55D-Co-h25" firstAttribute="leading" secondItem="D7I-dZ-OOy" secondAttribute="trailing" constant="20" id="cxX-eT-Q9K"/>
+                    <constraint firstItem="EPS-af-fom" firstAttribute="leading" secondItem="55D-Co-h25" secondAttribute="leading" id="dSv-mw-t1V"/>
+                    <constraint firstItem="EPS-af-fom" firstAttribute="top" secondItem="55D-Co-h25" secondAttribute="bottom" constant="5" id="dcv-6Y-gFZ"/>
+                    <constraint firstItem="55D-Co-h25" firstAttribute="top" secondItem="D7I-dZ-OOy" secondAttribute="top" constant="5" id="sTt-8g-Q8t"/>
+                    <constraint firstItem="D7I-dZ-OOy" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="wBT-IC-GWm"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="emailLabel" destination="EPS-af-fom" id="ibW-L8-RHk"/>
+                <outlet property="headImageView" destination="D7I-dZ-OOy" id="pg6-hV-Yni"/>
+                <outlet property="nameLabel" destination="55D-Co-h25" id="qD4-KX-rxh"/>
+            </connections>
+            <point key="canvasLocation" x="139" y="142"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
+    </resources>
+</document>

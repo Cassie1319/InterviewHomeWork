@@ -1,0 +1,27 @@
+
+/* Class = "UIButton"; configuration.title = "登录"; ObjectID = "CJu-xA-iHi"; */
+"CJu-xA-iHi.configuration.title" = "登录";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "CJu-xA-iHi"; */
+"CJu-xA-iHi.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "WhatAnApp"; ObjectID = "E1b-ad-j86"; */
+"E1b-ad-j86.text" = "WhatAnApp";
+
+/* Class = "UILabel"; text = "密码："; ObjectID = "HYd-cA-8yg"; */
+"HYd-cA-8yg.text" = "密码：";
+
+/* Class = "UITabBarItem"; title = "主页"; ObjectID = "Kln-9L-hL6"; */
+"Kln-9L-hL6.title" = "主页";
+
+/* Class = "UIButton"; configuration.title = "注册"; ObjectID = "Scz-dx-iZs"; */
+"Scz-dx-iZs.configuration.title" = "注册";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Scz-dx-iZs"; */
+"Scz-dx-iZs.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "用户名："; ObjectID = "YBL-HG-mYV"; */
+"YBL-HG-mYV.text" = "用户名：";
+
+/* Class = "UITabBarItem"; title = "我"; ObjectID = "j0U-PN-KL9"; */
+"j0U-PN-KL9.title" = "我";
