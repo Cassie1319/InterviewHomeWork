@@ -12,6 +12,7 @@ class HomeViewController: UIViewController {
     private let collectionCellNibName = "CustomCollectionViewCell"
     private let numberOfColumns = 2
     private var cellModels = [CellModel]()
+    private var currentCellModels = [CellModel]()
     
     @IBOutlet weak var collectionView: UICollectionView! {
         didSet {
@@ -19,28 +20,21 @@ class HomeViewController: UIViewController {
         }
     }
     
-    private lazy var searchController: UISearchController = {
-        let searchVC = UISearchController(searchResultsController: nil)
-        searchVC.obscuresBackgroundDuringPresentation = false
-        searchVC.searchBar.placeholder = "Search".localized
-        searchVC.searchBar.delegate = self
-        searchVC.searchBar.backgroundColor = UIColor.red
-        //.systemGray6
-        return searchVC
-    }()
+    @IBOutlet weak var searchBar: UISearchBar! {
+        didSet {
+            searchBar.placeholder = "Search".localized
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         createCellModels()
-        if let naviController = navigationController {
-            naviController.navigationItem.searchController = searchController
-        }
+        currentCellModels.append(contentsOf: cellModels)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.navigationBar.isHidden = false
-        //navigationController?.navigationBar.topItem?.hidesBackButton = true
+        navigationController?.navigationBar.isHidden = true
     }
     
 }
@@ -55,12 +49,12 @@ extension HomeViewController: UICollectionViewDelegate {
 extension HomeViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return currentCellModels.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let collectionViewCell: CustomCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: collectionCellNibName, for: indexPath) as! CustomCollectionViewCell
-        collectionViewCell.cellModel = cellModels[indexPath.row]
+        collectionViewCell.cellModel = currentCellModels[indexPath.row]
         collectionViewCell.layer.borderColor = CGColor(red: 0, green: 0, blue: 0, alpha: 0.5)
         collectionViewCell.layer.borderWidth = 1
         return collectionViewCell
@@ -81,11 +75,25 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
 extension HomeViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-//        refreshData()
+        if let keyword = searchBar.text {
+            currentCellModels.removeAll()
+            if !keyword.isEmpty {
+                for cellModel in cellModels {
+                    if cellModel.imageName.contains(keyword) {
+                        currentCellModels.append(cellModel)
+                    }
+                }
+            } else {
+                currentCellModels.append(contentsOf: cellModels)
+            }
+            collectionView.reloadData()
+        }
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-//        refreshData()
+        currentCellModels.removeAll()
+        currentCellModels.append(contentsOf: cellModels)
+        collectionView.reloadData()
     }
     
 }

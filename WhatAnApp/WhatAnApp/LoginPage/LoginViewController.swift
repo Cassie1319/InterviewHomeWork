@@ -13,9 +13,14 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     
+    var isDarkMode = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        isDarkMode = traitCollection.userInterfaceStyle == .dark
+        nameTextField.backgroundColor = isDarkMode ? .lightGray : .white
+        pswTextField.backgroundColor = isDarkMode ? .lightGray : .white
     }
     
     override func viewWillAppear(_ animated: Bool) {

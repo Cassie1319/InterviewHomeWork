@@ -180,7 +180,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="OaG-iQ-nXR">
-                                <rect key="frame" x="0.0" y="59" width="393" height="710"/>
+                                <rect key="frame" x="0.0" y="115" width="393" height="654"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Wif-3m-aQT">
                                     <size key="itemSize" width="200" height="200"/>
@@ -203,24 +203,35 @@
                                     <outlet property="delegate" destination="Kxd-Dc-yPE" id="Sai-Bf-OaO"/>
                                 </connections>
                             </collectionView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="HDl-3j-i0v">
+                                <rect key="frame" x="0.0" y="59" width="393" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Kxd-Dc-yPE" id="YgG-JB-ywP"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xRd-4u-3w8"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="xRd-4u-3w8" firstAttribute="bottom" secondItem="OaG-iQ-nXR" secondAttribute="bottom" id="34C-Y3-JWT"/>
                             <constraint firstItem="OaG-iQ-nXR" firstAttribute="leading" secondItem="xRd-4u-3w8" secondAttribute="leading" id="4Ic-M7-SPJ"/>
+                            <constraint firstItem="HDl-3j-i0v" firstAttribute="top" secondItem="xRd-4u-3w8" secondAttribute="top" id="57I-4C-Wxq"/>
+                            <constraint firstItem="HDl-3j-i0v" firstAttribute="trailing" secondItem="xRd-4u-3w8" secondAttribute="trailing" id="V0G-L0-sT2"/>
+                            <constraint firstItem="HDl-3j-i0v" firstAttribute="leading" secondItem="xRd-4u-3w8" secondAttribute="leading" id="YAS-Et-62h"/>
+                            <constraint firstItem="OaG-iQ-nXR" firstAttribute="top" secondItem="HDl-3j-i0v" secondAttribute="bottom" id="dOo-9l-sM2"/>
                             <constraint firstItem="xRd-4u-3w8" firstAttribute="trailing" secondItem="OaG-iQ-nXR" secondAttribute="trailing" id="dgZ-tf-eGT"/>
-                            <constraint firstItem="OaG-iQ-nXR" firstAttribute="top" secondItem="xRd-4u-3w8" secondAttribute="top" id="lQK-A5-951"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="主页" image="house" catalog="system" selectedImage="house.fill" id="Kln-9L-hL6"/>
                     <connections>
                         <outlet property="collectionView" destination="OaG-iQ-nXR" id="NVe-dS-sGG"/>
+                        <outlet property="searchBar" destination="HDl-3j-i0v" id="8Ns-Me-mVY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xa0-ay-rIO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2027" y="-351"/>
+            <point key="canvasLocation" x="2026.7175572519084" y="-351.40845070422534"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="104-Eb-U4O">
