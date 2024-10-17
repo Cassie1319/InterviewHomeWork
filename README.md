@@ -10,12 +10,6 @@ This application provides a user-friendly interface designed to implementation c
 - **User Logoff**: Users can logoff any time.
 - **Error Page**: Provides a unified error page to inform users about any issues.
 
-# Dependences
-| 3rd Party Library  | Version  |
-| ------------ | ------------ |
-|  testA |  v1.0.0 |
-|  testB | v1.0.0  |
-
 # Architecture
 ### Assumption
 **Server Support**: Because there's no backend server support, but to facilitate future compatibility with API service, this app will provide a mock server module to support API request and return mock responses.
